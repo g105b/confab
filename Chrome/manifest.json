@@ -1,0 +1,14 @@
+{
+	"manifest_version": 2,
+	"name": "CONFAB",
+	"version": "0.1",
+	"minimum_chrome_version": "30",
+	"icons": { 
+		"16": "Icon-16.png", 
+		"128": "Icon-128.png"},
+	"app": {
+		"background": {
+			"scripts": ["AppMain.js"]
+		}
+	}
+}
