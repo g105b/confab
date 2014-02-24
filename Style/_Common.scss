@@ -1,0 +1,140 @@
+html, body {
+	height: 100%;
+}
+body {
+	font-family: "Exo 2";
+	font-weight: 300;
+
+	> header {
+		background: #f3f3f3;
+		background-image: linear-gradient($col_white, $col_grey);
+		height: 40px;
+		border-bottom: 1px solid $col_outline;
+		overflow: hidden;
+		-webkit-transition: height 0.2s ease-in-out;
+
+		h1 {
+			float: left;
+			font-family: "Audiowide";
+			font-weight: normal;
+			font-size: 1.5em;
+
+			a {
+				@include Clickable();
+
+				display: inline-block;
+				padding: 5px 16px;
+				text-decoration: none;
+				color: #444;
+			}
+		}
+
+		nav {
+			float: right;
+
+			form#auth {
+				float: left;
+
+				div.toggle {
+					float: left;
+
+					button {
+						@include Clickable();
+						padding: 8px;
+						border: none;
+						background: transparent;
+						text-align: top;
+
+						&::before {
+							font-family: "FontAwesome";
+							font-size: 16px;
+							vertical-align: middle;
+						}
+
+						&.login {
+							&.google::before {
+								content: "\f0d4";
+							}
+							&.twitter::before {
+								content: "\f081";
+							}
+							&.facebook::before {
+								content: "\f082";
+							}
+						}
+
+						&.logout {
+							&::before {
+								content: "\f08b";
+							}
+						}				
+					}
+				}
+			}
+
+			ul {
+				float: left;
+				list-style-type: none;
+				vertical-align: middle;
+				padding-right: 60px;
+				border-left: 1px solid $col_outline;
+
+				li {
+					float: left;
+					border-right: 1px solid $col_outline;
+
+					a {
+						@include Clickable();
+						padding: 10px 8px;
+						display: block;
+						text-decoration: none;
+						color: #000;
+
+
+						i {
+							font-size: 16px;
+							padding-right: 0.5em;
+						}
+					}
+				}
+			}
+
+			label.toggle {
+				@include Clickable;
+				position: absolute;
+				z-index: 10;
+				top: 0;
+				right: 0;
+				padding: 8px;
+				margin-right: 16px;
+
+				&::before {
+					font-family: "FontAwesome";
+					content: "\f151"; // fa-toggle-down
+				}
+			}
+		} // nav	
+	}
+
+	> input#toggle-header {
+		display: none;
+
+		&:checked {
+			~ header {
+				height: 0;
+
+				label.toggle {
+					opacity: 0.2;
+
+					&:hover {
+						opacity: 1;
+					}
+
+					&::before {
+						content: "\f150"; // fa-toggle-down
+					}
+				}
+			}
+		}
+	}
+}

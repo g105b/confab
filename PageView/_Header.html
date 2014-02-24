@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>CONFAB</title>
+	<meta name="description" content="Simple Webcam Conferencing" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="/Style/Font/FontAwesome.css" />
+	<link rel="stylesheet" href="/Style/Font/Audiowide.css" />
+	<link rel="stylesheet" href="/Style/Font/Exo2.css" />
+	<link rel="stylesheet" href="/Style/Gt.css" />
+	<link rel="stylesheet" href="/Style/Main.scss" />
+	<script src="/Script/Lib/Firebase.js"></script>
+	<script src="/Script/Gt.js"></script>
+	<script src="/Script/Lib/RTC-Meeting.js"></script>
+	<script src="/Script/Main.js"></script>
+
+</head>
+<body>
+
+<input id="toggle-header" type="checkbox" />
+
+<header>
+	<h1>
+		<a href="/">CONFAB</a>
+	</h1>
+
+	<nav>
+		<form id="auth">
+			<div class="login toggle">
+				<button name="login" value="Google" class="login google"
+				title="Log in with Google"></button>
+				<button name="login" value="Twitter" class="login twitter"
+				title="Log in with Twitter"></button>
+				<button name="login" value="Facebook" class="login facebook"
+				title="Log in with Facebook"></button>
+			</div>
+			<div class="logout toggle">
+				<button name="logout" class="logout" title="Log out">
+					Log out
+				</button>
+			</div>
+		</form>
+		
+		<ul>
+			<li>
+				<a href="/About.html">
+					<i class="fa fa-question-circle"></i>
+					About
+				</a>
+			</li>
+			<li>
+				<a href="/Rooms.html">
+					<i class="fa fa-comments-o"></i>
+					Rooms
+				</a>
+			</li>
+		</ul>
+
+		<label for="toggle-header" title="Toggle header" class="toggle"></label>
+	</nav>
+</header>

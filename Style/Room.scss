@@ -1,0 +1,158 @@
+body.room {
+	$top: 53px;
+
+	section {
+		float: left;
+		margin: 0;
+		box-sizing: border-box;
+
+		ol, ul {
+			list-style-type: none;
+		}
+	}
+	section#chat {
+		display: none;
+		position: fixed;
+		bottom: 8px;
+		left: 0;
+		width: 30%;
+		height: 320px;
+		border: 1px solid $col_outline_dark;
+
+		form {
+			position: absolute;
+			height: 48px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			img {
+				float: left;
+				height: 100%;
+				border: 1px solid $col_outline;
+			}
+
+			div {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 48px;
+				right: 80px;
+				
+				input {
+					box-sizing: border-box;
+					width: 100%;
+					font-size: 1.4em;
+					padding: 0.5em;
+					border: 1px solid $col_outline;
+					outline: none;
+
+					&:focus {
+						// outline: 1px solid $col_outline;
+						border-color: $col_outline_dark;
+					}
+				}
+
+			}
+			button {
+				position: absolute;
+				display: block;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 80px;
+				background: transparent;
+				border: none;
+
+				@include Clickable();
+			}
+		}
+	}
+	ul#cams {
+		position: absolute;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		flex-wrap: wrap;
+
+		top: $top;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		list-style-type: none;
+
+		&:empty {
+			&::before {
+				content: "LOADING...";
+			}
+		}
+
+		li {
+			position: relative;
+			box-sizing: border-box;
+			padding: 2px;
+			padding-bottom: 0;
+			outline: 1px solid $col_outline;
+			background: #000;
+
+			min-width: 33.333%;
+
+			&:nth-child(-n+3) {
+				flex-grow: 1;
+				margin: auto;
+				width: auto;
+				max-width: 60%;
+			}
+
+			&.small {
+				min-width: 20%;
+				margin: 0;
+				flex-grow: 0;
+			}
+			&.tiny {
+				min-width: 10%;
+			}
+
+			span {
+				position: absolute;
+				display: block;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				right: 0;
+
+				background: rgba(#000, 0.2);
+				color: #fff;
+				font-size: 2em;
+				text-align: center;
+
+				opacity: 0;
+			}
+			&:hover span {
+				opacity: 1;	
+			}
+
+			img {
+				width: 100%;
+			}
+
+			video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	> input#toggle-header {
+		display: none;
+
+		&:checked {
+			~ #cams {
+				top: 8px;
+			}
+		}
+	}
+}
