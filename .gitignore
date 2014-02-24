@@ -1,0 +1,6 @@
+www/*/*
+www/*.cache
+Cache/*
+Upload/*
+*.log
+*.sublime-*
