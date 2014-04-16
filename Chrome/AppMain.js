@@ -1,8 +1,8 @@
 chrome.app.runtime.onLaunched.addListener(function() {
-  chrome.app.window.create('AppWindow.html', {
+  chrome.app.window.create("http://confab.dev.php.gt", {
     'bounds': {
-      'width': 400,
-      'height': 500
+      'width': 800,
+      'height': 600
     }
   });
 });
